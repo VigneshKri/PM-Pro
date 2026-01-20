@@ -104,19 +104,19 @@ curl -fsSL https://ollama.ai/install.sh | sh
 # 2. Start Ollama service
 ollama serve
 
-# 3. Open PM-Pro and navigate to AI Settings
-# 4. Select your preferred model from the dropdown
-# 5. Click "Pull & Enable Model" to download and activate
+# 3. Open PM-Pro sidebar (expand if closed)
+# 4. Select your preferred model from the dropdown next to "AI Active"
+# 5. Your selection is automatically saved and applied
 # 6. Start generating PRDs, user stories, and more!
 ```
 
 **How It Works:**
-1. **Select Model**: Choose from 4 pre-configured models in the app settings
-2. **Automatic Pull**: PM-Pro automatically downloads the selected model via Ollama CLI
-3. **Enable Processing**: Toggle Ollama mode on/off without code changes
-4. **Generate Content**: All AI features work seamlessly with your chosen model
+1. **Select Model**: Choose from 4 pre-configured models directly in the sidebar dropdown (next to "AI Active" status)
+2. **Instant Switch**: Model selection persists across sessions and automatically applies to all AI operations
+3. **Zero Configuration**: No code changes or manual configuration needed
+4. **Generate Content**: All AI features (PRD, User Stories, Competitive Analysis) seamlessly use your chosen model
 
-**No Manual Configuration Required!** Everything is managed through the UI.
+**Live Model Switching!** Switch between models anytime from the sidebar - your preference is automatically saved and applied to all AI processing.
 
 📖 See [OLLAMA_SETUP.md](OLLAMA_SETUP.md) for detailed setup guide and troubleshooting.
 
@@ -371,6 +371,7 @@ netlify deploy --prod
 - **Open State**: Full navigation with labels (260px width)
 - **Click Logo**: Expand sidebar by clicking the PM-Pro logo when closed
 - **Close Button**: Visible inside sidebar when open for easy collapse
+- **AI Model Switcher**: Dropdown in sidebar footer to switch between 4 AI models instantly
 - **Mobile Friendly**: Tap outside overlay to close on mobile devices
 
 ### Smart Header
@@ -480,9 +481,10 @@ Built with ❤️ for Tech Product Managers who code
 - ✅ Custom milestone management with progress tracking
 - ✅ Glassmorphism-styled modal forms matching app theme
 - ✅ Ollama AI integration with UI-based model selection
-- ✅ Automatic model pulling and management from the app
+- ✅ Live model switcher in sidebar (next to "AI Active" status)
 - ✅ Support for 4 popular open-source models (Phi-3, Gemma, Mistral, Llama 2)
-- ✅ Zero-configuration AI: Select, pull, and enable models from settings
+- ✅ Persistent model selection with localStorage (remembers your choice)
+- ✅ Zero-configuration AI: Switch models instantly from the sidebar dropdown
 
 ---
 
