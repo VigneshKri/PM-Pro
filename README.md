@@ -461,6 +461,7 @@ This project showcases:
 This project is created for portfolio and educational purposes.
 
 ## 👨‍💻 Author
+Vignesh R Krishnan
 
 Built with ❤️ for Tech Product Managers who code
 
