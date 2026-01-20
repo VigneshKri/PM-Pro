@@ -13,8 +13,21 @@
 
 // Configuration
 const OLLAMA_API_URL = 'http://localhost:11434/api/generate';
-const MODEL_NAME = 'phi3'; // Alternative: 'mistral', 'llama2', 'gemma:2b'
+let MODEL_NAME = 'phi3'; // Default model
 const USE_OLLAMA = false; // Set to true to use Ollama, false for simulated responses
+
+// Get current model from localStorage or use default
+const getCurrentModel = () => {
+  return localStorage.getItem('selectedModel') || MODEL_NAME;
+};
+
+// Listen for model changes
+if (typeof window !== 'undefined') {
+  window.addEventListener('modelChanged', (event) => {
+    MODEL_NAME = event.detail.model;
+    console.log('AI Model switched to:', MODEL_NAME);
+  });
+}
 
 /**
  * Generate text using Ollama model
@@ -29,13 +42,14 @@ export const generateWithOllama = async (prompt, options = {}) => {
   }
 
   try {
+    const currentModel = getCurrentModel();
     const response = await fetch(OLLAMA_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: MODEL_NAME,
+        model: currentModel,
         prompt: prompt,
         stream: false,
         options: {
